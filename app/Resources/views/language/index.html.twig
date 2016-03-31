@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Language list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Field name</th>
+                <th>Language English</th>
+                <th>Language Arabic</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for language in languages %}
+            <tr>
+                <td>{{ language.fieldName }}</td>
+                <td>{{ language.langEn }}</td>
+                <td>{{ language.langAr }}</td>
+                <td><a href="{{ path('admin_lanuage_edit', { 'id': language.id }) }}">edit</a>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_lanuage_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

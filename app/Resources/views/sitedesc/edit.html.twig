@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block title %} Site Description : Edit{% endblock %}
+{% block body %}
+    <h1>Site Description : Edit</h1>
+     <div class="tabs">
+        <ul class="tab-links">
+            <li class="active"><a href="#tab1">English section</a></li>
+            <li><a href="#tab2">Arabic section</a></li>
+        </ul>
+        <div class="tab-content">
+            {{ form_start(edit_form) }}
+            <div id="tab1" class="tab active">
+                {{ form_row(edit_form.siteDescTitle) }}
+                {{ form_row(edit_form.siteDescContent) }}
+            </div>
+            <div id="tab2" class="tab">
+                {{ form_row(edit_form.siteDescTitleAr) }}
+                {{ form_row(edit_form.siteDescContentAr) }}
+            </div>
+        </div>
+    </div>
+
+    <input type="submit" value="Edit"/>
+    {{ form_end(edit_form) }}
+           </li>
+    </ul>
+{% endblock %}

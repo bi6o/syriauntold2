@@ -1,0 +1,13 @@
+{% extends 'basefrontend.html.twig' %}
+{% block body %}
+    {% if app.request.query.get('id') %}
+        <div class="row" style="height: 100px; background-color: #000"></div>
+        {% include 'public/city-information.html.twig' %}
+        {% include 'public/infographic-viewer.html.twig' %}
+        {% include 'public/video.html.twig' %}
+        {% include 'public/gallery.html.twig' %}
+        {% include 'public/radio.html.twig' %}
+        {% include 'public/articles.html.twig' %}
+    {% endif %}
+{% endblock %}
+

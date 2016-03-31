@@ -1,0 +1,4 @@
+cms_homepage_default:
+    path:     /
+    defaults: { _controller: "CMSBundle:Default:index" }
+    methods:  GET

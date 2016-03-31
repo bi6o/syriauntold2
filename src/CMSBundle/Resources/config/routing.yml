@@ -1,0 +1,61 @@
+cms_admin_user:
+    resource: "@CMSBundle/Resources/config/routing/user.yml"
+    prefix:   /admin/user
+
+cms_homepage:
+    resource: "@CMSBundle/Resources/config/routing/homepage.yml"
+    prefix:   /admin
+
+cms_admin_sitedesc:
+        resource: "@CMSBundle/Resources/config/routing/sitedesc.yml"
+        prefix:   /admin/sitedesc/
+
+cms_admin_video:
+        resource: "@CMSBundle/Resources/config/routing/video.yml"
+        prefix:   /admin/video
+
+cms_admin_infographic:
+        resource: "@CMSBundle/Resources/config/routing/infographic.yml"
+        prefix:   /admin/infographic
+
+cms_admin_audio:
+        resource: "@CMSBundle/Resources/config/routing/audio.yml"
+        prefix:   /admin/audio
+
+cms_admin_image:
+        resource: "@CMSBundle/Resources/config/routing/image.yml"
+        prefix:   /admin/image
+
+cms_admin_article:
+        resource: "@CMSBundle/Resources/config/routing/article.yml"
+        prefix:   /admin/article
+
+cms_admin_city:
+        resource: "@CMSBundle/Resources/config/routing/city.yml"
+        prefix:   /admin/city
+
+cms_admin_sitemeta:
+        resource: "@CMSBundle/Resources/config/routing/sitemeta.yml"
+        prefix:   /admin/sitemeta
+
+cms_admin_lanuage:
+        resource: "@CMSBundle/Resources/config/routing/language.yml"
+        prefix:   /admin/lanuage
+
+homepage:
+    path: /home
+    defaults: { _controller: CMSBundle:Frontend:index }
+
+homepage_city_ajax:
+  pattern:  /home
+  defaults: { _controller: CMSBundle:Frontend:ajax }
+
+login:
+    path: /admin/login
+    defaults: { _controller: CMSBundle:Security:login }
+
+login_check:
+    path: /admin/login_check
+
+logout:
+    pattern: /logout

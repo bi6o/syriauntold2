@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block title %} Videos of {{ city.name|raw }} {% endblock %}
+{% block body %}
+    <h1>Video list</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Video Title</th>
+            <th>Video Director</th>
+            <th>Video Date</th>
+            <th>City</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for video in videos %}
+            <tr>
+                <td>{{ video.videoTitle }}</td>
+                <td>{{ video.videoDirector }}</td>
+                <td>{% if video.videoDate %}{{ video.videoDate|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ city.name }}</td>
+                <td><a href="{{ path('admin_video_edit', { 'id': video.id }) }}">edit</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_video_city_new', { 'id': city.id }) }}">Create a new Video</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_city_content' , { 'id': city.id } ) }}">Back to City's content</a>
+        </li>
+    </ul>
+{% endblock %}

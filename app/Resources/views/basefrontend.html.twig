@@ -1,0 +1,22 @@
+{% include 'public/header.html.twig' %}
+{% block body %}
+    <div id="ajax"></div>{% endblock %}
+{% include 'public/footer.html.twig' %}
+<script>
+    function cityChosen(cityId) {
+        $.post('{{path('homepage_city_ajax')}}',
+                {id: cityId},
+                function (data) {
+                    alert(data);
+                    $("#ajax").html(data);
+                }, "json");
+    }
+
+    $(document).ready(function () {
+        $('.rwl-cities button').on('click', function () {
+            cityChosen(
+                    $(this).attr('value')
+            );
+        });
+    });
+</script>

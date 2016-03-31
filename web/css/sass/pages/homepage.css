@@ -1,0 +1,141 @@
+@font-face {
+  font-family: 'Helvetica';
+  src: url("../../fonts/HelveticaNeueLTStd-Lt.eot");
+  /* IE9 Compat Modes */
+  src: url("../../fonts/HelveticaNeueLTStd-Lt.eot?#iefix") format("embedded-opentype"), url("../../fonts/HelveticaNeueLTStd-Lt.woff2") format("woff2"), url("../../fonts/HelveticaNeueLTStd-Lt.woff") format("woff"), url("../../fonts/HelveticaNeueLTStd-Lt.ttf") format("truetype"), url("../../fonts/HelveticaNeueLTStd-Lt.svg#HelveticaNeueLTStd") format("HelveticaNeueLTStd");
+  /* Legacy iOS */
+}
+/* line 14, ../../../sass/pages/homepage.scss */
+body {
+  font-family: 'Helvetica';
+  letter-spacing: 1px;
+}
+
+@font-face {
+  font-family: 'Droidsan';
+  src: url("../../fonts/droid-sans.eot");
+  /* IE9 Compat Modes */
+  src: url("../../fonts/droid-sans.eot?#iefix") format("embedded-opentype"), url("../../fonts/droid-sans.woff2") format("woff2"), url("../../fonts/droid-sans.woff") format("woff"), url("../../fonts/droid-sans.ttf") format("truetype"), url("../../droid-sans.svg#HelveticaNeueLTStd") format("HelveticaNeueLTStd");
+  /* Legacy iOS */
+}
+/* line 29, ../../../sass/pages/homepage.scss */
+.paragraph-text, .city-text {
+  font-family: 'Droidsan';
+  letter-spacing: 1px;
+}
+
+/* line 34, ../../../sass/pages/homepage.scss */
+.yellow-subject {
+  /*   height: 50px;
+    padding-top: 10px; */
+  border-radius: 5px;
+  background-color: #f7ff05;
+}
+/* line 39, ../../../sass/pages/homepage.scss */
+.yellow-subject h4 {
+  padding-top: 22px;
+  font-weight: bold;
+}
+/* line 43, ../../../sass/pages/homepage.scss */
+.yellow-subject img {
+  height: 75px;
+  width: auto;
+}
+
+/* line 50, ../../../sass/pages/homepage.scss */
+.row-centered {
+  text-align: center;
+}
+/* line 53, ../../../sass/pages/homepage.scss */
+.row-centered .col-centered {
+  display: inline-block;
+  float: none;
+  /* reset the text-align */
+  text-align: left;
+  /* inline-block space fix */
+  margin-right: -4px;
+}
+
+/* line 64, ../../../sass/pages/homepage.scss */
+.center-div-elements {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+/* line 75, ../../../sass/pages/homepage.scss */
+.center-div-elements-vertically {
+  display: flex;
+  justify-content: center;
+}
+
+/* line 81, ../../../sass/pages/homepage.scss */
+.paragraph-text {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+/* line 89, ../../../sass/pages/homepage.scss */
+.alert-subject {
+  /*     display: inline-block;
+   */
+  /*   padding-bottom: 15px; */
+}
+/* line 92, ../../../sass/pages/homepage.scss */
+.alert-subject .col-md-4, .alert-subject .col-sm-4, .alert-subject .col-xs-4 {
+  padding-left: 0px;
+}
+
+/* line 96, ../../../sass/pages/homepage.scss */
+.alert-subject h1, .alert-subject h2, .alert-subject h3, .alert-subject h4, .alert-subject h5, .alert-subject h6, .alert-subject p {
+  color: white;
+  font-weight: bold;
+  padding-left: 90px;
+}
+
+/* line 103, ../../../sass/pages/homepage.scss */
+.alert-subject > :first-child {
+  padding: 15px 15px 7px 15px;
+  background-color: #ff0d05;
+}
+
+/* line 108, ../../../sass/pages/homepage.scss */
+.alert-subject :nth-child(2) {
+  padding: 3px 6px 1px 15px;
+  height: 40px;
+  background-color: #850804;
+}
+
+/* line 117, ../../../sass/pages/homepage.scss */
+.primary-subject .col-md-4, .primary-subject .col-sm-4, .primary-subject .col-xs-4 {
+  padding-right: 0px;
+}
+
+/* line 123, ../../../sass/pages/homepage.scss */
+.primary-subject {
+  direction: rtl;
+}
+/* line 125, ../../../sass/pages/homepage.scss */
+.primary-subject h1, .primary-subject h2, .primary-subject h3, .primary-subject h4, .primary-subject h5, .primary-subject h6, .primary-subject p {
+  color: #000;
+  font-weight: bold;
+  padding-right: 90px;
+}
+
+/* line 132, ../../../sass/pages/homepage.scss */
+.primary-subject > :first-child {
+  padding: 15px 15px 7px 15px;
+  background-color: #f7ff05;
+}
+
+/* line 137, ../../../sass/pages/homepage.scss */
+.primary-subject :nth-child(2) {
+  padding: 3px 6px 1px 15px;
+  height: 40px;
+  background-color: #fcff59;
+}

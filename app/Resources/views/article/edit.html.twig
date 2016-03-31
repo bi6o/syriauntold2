@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block title %} Articles : Edit {% endblock %}
+{% block body %}
+    <h1>Article edit</h1>
+     <div class="tabs">
+        <ul class="tab-links">
+            <li class="active"><a href="#tab1">English section</a></li>
+            <li><a href="#tab2">Arabic section</a></li>
+        </ul>
+        <div class="tab-content">
+            {{ form_start(edit_form) }}
+            <div id="tab1" class="tab active">
+                {{ form_row(edit_form.articleTitle) }}
+                {{ form_row(edit_form.articleDesc) }}
+            </div>
+            <div id="tab2" class="tab">
+                {{ form_row(edit_form.articleTitleAr) }}
+                {{ form_row(edit_form.articleDescAr) }}
+            </div>
+        </div>
+    </div>
+    {{ form_row(edit_form.imageFile) }}
+    {{ form_row(edit_form.articleLink) }}
+    {{ form_row(edit_form.cityId) }}
+    <input type="submit" value="Edit"/>
+    {{ form_end(edit_form) }}
+        </li>
+    </ul>
+{% endblock %}

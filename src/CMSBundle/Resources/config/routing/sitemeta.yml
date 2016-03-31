@@ -1,0 +1,24 @@
+admin_sitemeta_index:
+    path:     /
+    defaults: { _controller: "CMSBundle:SiteMeta:index" }
+    methods:  GET
+
+admin_sitemeta_show:
+    path:     /{id}/show
+    defaults: { _controller: "CMSBundle:SiteMeta:show" }
+    methods:  GET
+
+admin_sitemeta_new:
+    path:     /new
+    defaults: { _controller: "CMSBundle:SiteMeta:new" }
+    methods:  [GET, POST]
+
+admin_sitemeta_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CMSBundle:SiteMeta:edit" }
+    methods:  [GET, POST]
+
+admin_sitemeta_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CMSBundle:SiteMeta:delete" }
+    methods:  DELETE

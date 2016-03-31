@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+{% block title %} Audio of {{ city.name|raw }} {% endblock %}
+{% block body %}
+    <h1>Audio list</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Audio link</th>
+            <th>City</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for audio in audios %}
+            <tr>
+                <td>{{ audio.audioLink }}</td>
+                <td>{{ city.name }}</td>
+                <td>
+                    <a href="{{ path('admin_audio_edit', { 'id': audio.id }) }}">edit</a>
+
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_audio_city_new' , {'id' : city.id}) }}">Create a new Audio</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_city_content' , { 'id': city.id } ) }}">Back to City's content</a>
+        </li>
+    </ul>
+{% endblock %}

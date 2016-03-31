@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Video list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Videotitle</th>
+                <th>Videotitlear</th>
+                <th>Videodesc</th>
+                <th>Videodescar</th>
+                <th>Videodirector</th>
+                <th>Videodirectorar</th>
+                <th>Videolink</th>
+                <th>Videodate</th>
+                <th>Cityid</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for video in videos %}
+            <tr>
+                <td><a href="{{ path('admin_video_show', { 'id': video.id }) }}">{{ video.id }}</a></td>
+                <td>{{ video.videoTitle }}</td>
+                <td>{{ video.videoTitleAr }}</td>
+                <td>{{ video.videoDesc }}</td>
+                <td>{{ video.videoDescAr }}</td>
+                <td>{{ video.videoDirector }}</td>
+                <td>{{ video.videoDirectorAr }}</td>
+                <td>{{ video.videoLink }}</td>
+                <td>{% if video.videoDate %}{{ video.videoDate|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ video.cityId }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_video_show', { 'id': video.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_video_edit', { 'id': video.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_video_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,24 @@
+admin_sitedesc_index:
+    path:     /
+    defaults: { _controller: "CMSBundle:SiteDesc:index" }
+    methods:  GET
+
+admin_sitedesc_show:
+    path:     /{id}/show
+    defaults: { _controller: "CMSBundle:SiteDesc:show" }
+    methods:  GET
+
+admin_sitedesc_new:
+    path:     /new
+    defaults: { _controller: "CMSBundle:SiteDesc:new" }
+    methods:  [GET, POST]
+
+admin_sitedesc_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CMSBundle:SiteDesc:edit" }
+    methods:  [GET, POST]
+
+admin_sitedesc_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CMSBundle:SiteDesc:delete" }
+    methods:  DELETE

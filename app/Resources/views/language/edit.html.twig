@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Language edit</h1>
+
+    {{ form_start(edit_form) }}
+    <div class="row display-only-container">
+        <label class="text-capitalize col-md-5">Field Name: <span class="red text-uppercase">{{ language.fieldName }}</span></label>
+    </div>
+    {{ form_row(edit_form.langEn) }}
+    {{ form_row(edit_form.langAr) }}
+    <input type="submit" value="Edit"/>
+    {{ form_end(edit_form, {'render_rest': false}) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_lanuage_index') }}">Back to the list</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+            <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

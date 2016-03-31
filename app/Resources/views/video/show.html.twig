@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Video</h1>
+
+    <table>
+        <tbody>
+
+            <tr>
+                <th>Videotitle</th>
+                <td>{{ video.videoTitle }}</td>
+            </tr>
+            <tr>
+                <th>Videotitlear</th>
+                <td>{{ video.videoTitleAr }}</td>
+            </tr>
+            <tr>
+                <th>Videodesc</th>
+                <td>{{ video.videoDesc }}</td>
+            </tr>
+            <tr>
+                <th>Videodescar</th>
+                <td>{{ video.videoDescAr }}</td>
+            </tr>
+            <tr>
+                <th>Videodirector</th>
+                <td>{{ video.videoDirector }}</td>
+            </tr>
+            <tr>
+                <th>Videodirectorar</th>
+                <td>{{ video.videoDirectorAr }}</td>
+            </tr>
+            <tr>
+                <th>Videolink</th>
+                <td>{{ video.videoLink }}</td>
+            </tr>
+            <tr>
+                <th>Videodate</th>
+                <td>{% if video.videoDate %}{{ video.videoDate|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Cityid</th>
+                <td>{{ video.cityId }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_video_city' , { 'id' : video.cityId }) }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_video_edit', { 'id': video.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

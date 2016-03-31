@@ -1,0 +1,34 @@
+admin_audio_index:
+    path:     /
+    defaults: { _controller: "CMSBundle:Audio:index" }
+    methods:  GET
+
+admin_audio_show:
+    path:     /{id}/show
+    defaults: { _controller: "CMSBundle:Audio:show" }
+    methods:  GET
+
+admin_audio_new:
+    path:     /new
+    defaults: { _controller: "CMSBundle:Audio:new" }
+    methods:  [GET, POST]
+
+admin_audio_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CMSBundle:Audio:edit" }
+    methods:  [GET, POST]
+
+admin_audio_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CMSBundle:Audio:delete" }
+    methods:  DELETE
+
+admin_audio_city:
+    path:     /{id}/
+    defaults: { _controller: "CMSBundle:Audio:content" }
+    methods:  GET
+
+admin_audio_city_new:
+    path:     /new/{id}
+    defaults: { _controller: "CMSBundle:Audio:newcity" }
+    methods:  [GET, POST]

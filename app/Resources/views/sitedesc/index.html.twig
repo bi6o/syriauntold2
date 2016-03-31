@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block title %} Site Description{% endblock %}
+{% block body %}
+    <h1>Site Description</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Site description title</th>
+            <th>Site description content</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for siteDesc in siteDescs %}
+            <tr>
+                <td>{{ siteDesc.siteDescTitle }}</td>
+                <td>
+                    {{ siteDesc.siteDescContent|slice(0,50) ~ '...' }}
+                </td>
+
+                <td>
+                    <a href="{{ path('admin_sitedesc_edit', { 'id': siteDesc.id }) }}">edit </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

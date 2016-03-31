@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block title %} Articles of {{ city.name|raw }} {% endblock %}
+{% block body %}
+    <h1>Article list</h1>
+    <div class="row">
+        <table>
+            <thead>
+            <tr>
+                <th>Article title</th>
+                <th>Article image</th>
+                <th>City</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for article in articles %}
+                <tr>
+                    <td>{{ article.articleTitle }}</td>
+                    <td><img class="img-responsive col-md-6 col-md-offset-3" src="{{ '/images/article/' ~ article.articleImage }}" /></td>
+                    <td>{{ city.name}}</td>
+                    <td><a href="{{ path('admin_article_edit', { 'id': city.id }) }}">edit</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <ul>
+            <li>
+                <a href="{{ path('admin_article_city_new' , {'id' : city.id}) }}">Create a new Article</a>
+            </li>
+            <li>
+                <a href="{{ path('admin_city_content' , { 'id': city.id } )}}">Back to City's content</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}

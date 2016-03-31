@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block title %} SEO {% endblock %}
+{% block body %}
+    <h1>SEO list</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Site description</th>
+            <th>Site keywords</th>
+            <th>Site author</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for siteMetum in siteMetas %}
+            <tr>
+                <td>{{ siteMetum.siteDescription|slice(0,50) ~ '...' }}</td>
+                <td>{{ siteMetum.siteKeywords|slice(0,20) ~ '...' }}</td>
+                <td>{{ siteMetum.siteAuthor }}</td>
+                <td><a href="{{ path('admin_sitemeta_edit', { 'id': siteMetum.id }) }}">edit</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

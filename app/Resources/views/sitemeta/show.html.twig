@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+{% block title %} SEO : Show {% endblock %}
+{% block body %}
+    <h1>SiteMeta</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ siteMetum.id }}</td>
+            </tr>
+            <tr>
+                <th>Sitedescription</th>
+                <td>{{ siteMetum.siteDescription }}</td>
+            </tr>
+            <tr>
+                <th>Sitekeywords</th>
+                <td>{{ siteMetum.siteKeywords }}</td>
+            </tr>
+            <tr>
+                <th>Siteauthor</th>
+                <td>{{ siteMetum.siteAuthor }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_sitemeta_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_sitemeta_edit', { 'id': siteMetum.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

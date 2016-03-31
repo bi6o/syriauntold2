@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Language</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ language.id }}</td>
+            </tr>
+            <tr>
+                <th>Fieldname</th>
+                <td>{{ language.fieldName }}</td>
+            </tr>
+            <tr>
+                <th>Langen</th>
+                <td>{{ language.langEn }}</td>
+            </tr>
+            <tr>
+                <th>Langar</th>
+                <td>{{ language.langAr }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_lanuage_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_lanuage_edit', { 'id': language.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

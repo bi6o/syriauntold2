@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Syria Untold : {% block title %} CPanel homepage{% endblock %}</title>
+    <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    {% block stylesheets %}
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('css/bootstrap.min.css') }}"/>
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('css/main.css') }}"/>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+    {% endblock %}
+</head>
+<body>
+<div class="container">
+    <div class="header row">
+        <div class="col-md-2 col-md-offset-1 col-xs-2 cpanel-slogan">
+            <h1>CPanel</h1>
+        </div>
+        <div class="col-md-2 col-md-offset-2 col-xs-4 col-xs-offset-3 cpanel-logo-container">
+            <img class="img-responsive cpanel-logo" src="{{ asset('images/SU.png') }}"/>
+        </div>
+        {% if app.user %}
+            <div class="col-md-3 col-md-offset-2 col-xs-3 admin-name-container">
+                <span class="admin-welcome"> Welcome </span><span class="admin-name">{{ app.user.username|capitalize }} !</span>
+            </div>
+        {% endif %}
+    </div>
+    <div class="body-container row">
+        <div class="menu col-md-3 col-xs-4">
+            <nav class="nav col-md-12 col-xs-12">
+                {% if is_granted('ROLE_USER') %}
+                    <li><a href="{{ path('admin_sitedesc_index') }}"> Site&nbsp;Description </a></li>
+                    <li><a href="{{ path('admin_city_index') }}"> Cities </a></li>
+                    <li><a href="{{ path('admin_sitemeta_index') }}"> SEO </a></li>
+                    <li><a href="{{ path('admin_lanuage_index') }}"> Language&nbsp;Fields</a></li>
+                    <li><a href="{{ path('admin_user_index') }}"> Users </a></li>
+                    <li><a href="{{ path('logout') }}"> Logout </a></li>
+                {% endif %}
+            </nav>
+        </div>
+        <div class="col-md-9 col-xs-8 body-block-container">
+            {% block body %}{% endblock %}
+        </div>
+    </div>
+    <div class="footer row"><p class="copyrights text-center">All rights reserved for <span class="red"> Syria Untold </span>{{ 'now'|date('Y') }}	&copy;</p> </div>
+</div>
+</body>
+</html>
+{{ tinymce_init() }}
+<script>
+    jQuery(document).ready(function() {
+        jQuery('.tabs .tab-links a').on('click', function(e)  {
+            var currentAttrValue = jQuery(this).attr('href');
+
+            // Show/Hide Tabs
+            jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
+
+            // Change/remove current tab to active
+            jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
+
+            e.preventDefault();
+        });
+    });
+</script>

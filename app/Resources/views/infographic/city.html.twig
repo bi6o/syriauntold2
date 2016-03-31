@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+{% block title %} Infographics of {{ city.name|raw }}{% endblock %}
+
+{% block body %}
+    <h1>Infographics list </h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Infographic Image</th>
+            <th>City</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for infographic in infographics %}
+            <tr>
+                <td><img class="col-md-6 col-md-offset-3" src="{{ '/images/infographic/' ~ infographic.infoImage }}"/></td>
+                <td>{{ city.name }}</td>
+                <td><a href="{{ path('admin_infographic_edit', { 'id': infographic.id }) }}">edit</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_infographic_city_new' , { 'id': city.id } ) }}">Create a new Infographic</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_city_content' , { 'id': city.id } ) }}">Back to City's content</a>
+        </li>
+    </ul>
+{% endblock %}

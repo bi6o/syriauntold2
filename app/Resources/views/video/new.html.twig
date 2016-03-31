@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+{% block title %} Videos : New {% endblock %}
+{% block body %}
+    <h1>Video creation</h1>
+    <div class="tabs">
+        <ul class="tab-links">
+            <li class="active"><a href="#tab1">English section</a></li>
+            <li><a href="#tab2">Arabic section</a></li>
+        </ul>
+        <div class="tab-content">
+            {{ form_start(form) }}
+            <div id="tab1" class="tab active">
+                {{ form_row(form.videoTitle) }}
+                {{ form_row(form.videoDesc) }}
+                {{ form_row(form.videoDirector) }}
+            </div>
+            <div id="tab2" class="tab">
+                {{ form_row(form.videoTitleAr) }}
+                {{ form_row(form.videoDescAr) }}
+                {{ form_row(form.videoDirectorAr) }}
+            </div>
+        </div>
+    </div>
+    {{ form_row(form.videoLink) }}
+    {{ form_row(form.videoDate) }}
+    {{ form_row(form.cityId) }}
+
+    <input type="submit" value="Edit"/>
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_video_city' , { 'id' : video.cityId }) }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

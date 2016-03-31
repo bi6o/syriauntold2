@@ -1,0 +1,34 @@
+admin_video_index:
+    path:     /
+    defaults: { _controller: "CMSBundle:Video:index" }
+    methods:  GET
+
+admin_video_show:
+    path:     /{id}/show
+    defaults: { _controller: "CMSBundle:Video:show" }
+    methods:  GET
+
+admin_video_new:
+    path:     /new
+    defaults: { _controller: "CMSBundle:Video:new" }
+    methods:  [GET, POST]
+
+admin_video_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CMSBundle:Video:edit" }
+    methods:  [GET, POST]
+
+admin_video_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CMSBundle:Video:delete" }
+    methods:  DELETE
+
+admin_video_city:
+    path:     /{id}/
+    defaults: { _controller: "CMSBundle:Video:content" }
+    methods:  GET
+
+admin_video_city_new:
+    path:     /new/{id}
+    defaults: { _controller: "CMSBundle:Video:newcity" }
+    methods:  [GET, POST]

@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% block title %} Articles : New{% endblock %}
+{% block body %}
+    <h1>Article creation</h1>
+    <div class="tabs">
+        <ul class="tab-links">
+            <li class="active"><a href="#tab1">English section</a></li>
+            <li><a href="#tab2">Arabic section</a></li>
+        </ul>
+        <div class="tab-content">
+            {{ form_start(form) }}
+            <div id="tab1" class="tab active">
+                {{ form_row(form.articleTitle) }}
+                {{ form_row(form.articleDesc) }}
+            </div>
+            <div id="tab2" class="tab">
+                {{ form_row(form.articleTitleAr) }}
+                {{ form_row(form.articleDescAr) }}
+            </div>
+        </div>
+    </div>
+    {{ form_row(form.imageFile) }}
+    {{ form_row(form.articleLink) }}
+    {{ form_row(form.cityId) }}
+    <input type="submit" value="Edit"/>
+    {{ form_end(form) }}
+    <ul>
+        <li>
+            <a href="{{ path('admin_article_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

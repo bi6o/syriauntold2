@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+{% block title %} Images of {{ city.name|raw }} {% endblock %}
+{% block body %}
+    <h1>Image list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>City</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for image in images %}
+            <tr>
+                <td><img class="col-md-6 col-md-offset-3" src="{{ '/images/city/' ~ image.imageUrl }}" /></td>
+                <td>{{ city.name }}</td>
+                <td><a href="{{ path('admin_image_edit', { 'id': image.id }) }}">edit</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_image_city_new' , { 'id': city.id } )}}">Create a new Image</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_city_content' , { 'id': city.id } )}}">Back to City's content</a>
+        </li>
+    </ul>
+{% endblock %}

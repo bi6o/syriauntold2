@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+{% block title %} Cities : {{ city.name }}{% endblock %}
+{% block body %}
+    <h1>City content</h1>
+    <div class="tabs">
+        <ul class="tab-links">
+            <li class="active"><a href="#tab1">English section</a></li>
+            <li><a href="#tab2">Arabic section</a></li>
+        </ul>
+        <div class="tab-content">
+            {{ form_start(content_form) }}
+            <div id="tab1" class="tab active">
+                {{ form_row(content_form.name) }}
+                {{ form_row(content_form.cityDesc) }}
+            </div>
+            <div id="tab2" class="tab">
+                {{ form_row(content_form.nameAr) }}
+                {{ form_row(content_form.cityDescAr) }}
+            </div>
+        </div>
+    </div>
+    {{ form_widget(content_form) }}
+    <ul>
+        <li><a href="{{ path('admin_infographic_city' , { 'id': city.id }) }}">City Infographics</a></li>
+        <li><a href="{{ path('admin_video_city' , { 'id': city.id }) }}">City Videos</a></li>
+        <li><a href="{{ path('admin_audio_city' , { 'id': city.id }) }}">City Audio</a></li>
+        <li><a href="{{ path('admin_image_city' , { 'id': city.id }) }}">City Images</a></li>
+        <li><a href="{{ path('admin_article_city' , { 'id': city.id }) }}">City Articles</a></li>
+    </ul>
+    <input type="submit" value="Edit"/>
+    {{ form_end(content_form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_city_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Article</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ article.id }}</td>
+            </tr>
+            <tr>
+                <th>Articletitle</th>
+                <td>{{ article.articleTitle }}</td>
+            </tr>
+            <tr>
+                <th>Articletitlear</th>
+                <td>{{ article.articleTitleAr }}</td>
+            </tr>
+            <tr>
+                <th>Articledesc</th>
+                <td>{{ article.articleDesc }}</td>
+            </tr>
+            <tr>
+                <th>Articledescar</th>
+                <td>{{ article.articleDescAr }}</td>
+            </tr>
+            <tr>
+                <th>Articleimage</th>
+                <td>{{ article.articleImage }}</td>
+            </tr>
+            <tr>
+                <th>Articlelink</th>
+                <td>{{ article.articleLink }}</td>
+            </tr>
+            <tr>
+                <th>Cityid</th>
+                <td>{{ article.cityId }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_article_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_article_edit', { 'id': article.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

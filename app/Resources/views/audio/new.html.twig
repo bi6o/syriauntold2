@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block title %} Audio : New {% endblock %}
+{% block body %}
+    <h1>Audio creation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_audio_city' , { 'id' : audio.cityId }) }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

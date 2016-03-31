@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+{% block title %} Videos : Edit {% endblock %}
+{% block body %}
+    <h1>Video edit</h1>
+    <div class="tabs">
+        <ul class="tab-links">
+            <li class="active"><a href="#tab1">English section</a></li>
+            <li><a href="#tab2">Arabic section</a></li>
+        </ul>
+        <div class="tab-content">
+            {{ form_start(edit_form) }}
+            <div id="tab1" class="tab active">
+                {{ form_row(edit_form.videoTitle) }}
+                {{ form_row(edit_form.videoDesc) }}
+                {{ form_row(edit_form.videoDirector) }}
+            </div>
+            <div id="tab2" class="tab">
+                {{ form_row(edit_form.videoTitleAr) }}
+                {{ form_row(edit_form.videoDescAr) }}
+                {{ form_row(edit_form.videoDirectorAr) }}
+            </div>
+        </div>
+    </div>
+    {{ form_row(edit_form.videoLink) }}
+    {{ form_row(edit_form.videoDate) }}
+    {{ form_row(edit_form.cityId) }}
+
+    <input type="submit" value="Edit"/>
+    {{ form_end(edit_form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_video_city' , { 'id' : video.cityId }) }}">Back to the list</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+            <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Infographics list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Infographic Image</th>
+                <th>City id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for infographic in infographics %}
+            <tr>
+                <td><a href="{{ path('admin_infographic_show', { 'id': infographic.id }) }}">{{ infographic.id }}</a></td>
+                <td>{{ infographic.infoImage }}</td>
+                <td>{{ infographic.cityId }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_infographic_show', { 'id': infographic.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_infographic_edit', { 'id': infographic.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_infographic_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

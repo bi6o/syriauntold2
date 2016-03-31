@@ -1,0 +1,29 @@
+admin_city_index:
+    path:     /
+    defaults: { _controller: "CMSBundle:City:index" }
+    methods:  GET
+
+admin_city_show:
+    path:     /{id}/show
+    defaults: { _controller: "CMSBundle:City:show" }
+    methods:  GET
+
+admin_city_new:
+    path:     /new
+    defaults: { _controller: "CMSBundle:City:new" }
+    methods:  [GET, POST]
+
+admin_city_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CMSBundle:City:edit" }
+    methods:  [GET, POST]
+
+admin_city_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CMSBundle:City:delete" }
+    methods:  DELETE
+
+admin_city_content:
+    path:     /{id}/content
+    defaults: { _controller: "CMSBundle:City:content" }
+    methods:  [GET, POST]

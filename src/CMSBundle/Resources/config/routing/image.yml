@@ -1,0 +1,34 @@
+admin_image_index:
+    path:     /
+    defaults: { _controller: "CMSBundle:Image:index" }
+    methods:  GET
+
+admin_image_show:
+    path:     /{id}/show
+    defaults: { _controller: "CMSBundle:Image:show" }
+    methods:  GET
+
+admin_image_new:
+    path:     /new
+    defaults: { _controller: "CMSBundle:Image:new" }
+    methods:  [GET, POST]
+
+admin_image_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CMSBundle:Image:edit" }
+    methods:  [GET, POST]
+
+admin_image_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CMSBundle:Image:delete" }
+    methods:  DELETE
+
+admin_image_city:
+    path:     /{id}/
+    defaults: { _controller: "CMSBundle:Image:content" }
+    methods:  GET
+
+admin_image_city_new:
+    path:     /new/{id}
+    defaults: { _controller: "CMSBundle:Image:newcity" }
+    methods:  [GET, POST]

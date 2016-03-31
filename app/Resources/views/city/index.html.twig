@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block title %} Cities{% endblock %}
+{% block body %}
+    <h1>City list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Name Arabic</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for city in cities %}
+            <tr>
+                <td><a href="{{ path('admin_city_content', { 'id': city.id }) }}">{{ city.name }}</a></td>
+                <td><a href="{{ path('admin_city_content', { 'id': city.id }) }}">{{ city.nameAr }}</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        {#<li>#}
+            {#<a href="{{ path('admin_city_new') }}">Create a new entry</a>#}
+        {#</li>#}
+    </ul>
+{% endblock %}

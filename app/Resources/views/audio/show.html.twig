@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Audio</h1>
+
+    <table>
+        <tbody>
+
+            <tr>
+                <th>Audiolink</th>
+                <td>{{ audio.audioLink }}</td>
+            </tr>
+            <tr>
+                <th>Cityid</th>
+                <td>{{ audio.cityId }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_audio_city' , { 'id' : audio.cityId }) }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_audio_edit', { 'id': audio.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
