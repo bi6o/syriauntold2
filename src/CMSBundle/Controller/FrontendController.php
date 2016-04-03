@@ -11,6 +11,8 @@ use CMSBundle\Entity\Article;
 use CMSBundle\Entity\SiteDesc;
 use CMSBundle\Entity\SiteMeta;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 
 class FrontendController extends Controller
 {
@@ -20,17 +22,38 @@ class FrontendController extends Controller
         $sitedesc = $em->getRepository('CMSBundle:SiteDesc')->findAll();
         return $this->render('frontend/index.html.twig', array(
             'sitedesc' => $sitedesc,
+
+        ));
+    }
+    public function contentLoaderAction()
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $request = Request::createFromGlobals();
+        $cityId = $request->get('id');
+        $city = $em->getRepository('CMSBundle:City')->find($cityId);
+        $infographic = $em->getRepository('CMSBundle:Infographic')->findByCityId($cityId);
+        $Audio = $em->getRepository('CMSBundle:Audio')->findByCityId($cityId);
+        $Video = $em->getRepository('CMSBundle:Video')->findByCityId($cityId);
+        $Images = $em->getRepository('CMSBundle:Image')->findByCityId($cityId);
+        $Articles = $em->getRepository('CMSBundle:Article')->findByCityId($cityId);
+
+        return $this->render('frontend/ajax.html.twig', array(
+            'city' => $city,
+            'infographics' => $infographic,
+            'audio' => $Audio,
+            'video' => $Video,
+            'images' => $Images,
+            'articles' => $Articles,
+
         ));
     }
     public function ajaxAction(){
-        $request = $this->container->get('request');
-        $data1 = $request->query->get('cityId');
-        //handle data
-        $em = $this->getDoctrine()->getManager();
-        $city = $em->getRepository('CMSBundle:City')->findById($data1);
-        //prepare the response, e.g.
-        $response = array("code" => 100, "success" => true);
-        //you can return result as JSON
-        return new Response(json_encode($city,$response,array('Content-Type' => 'application/json')));
+
+        $template = $this->forward('CMSBundle:Frontend:contentLoader')->getContent();
+        $json = json_encode($template);
+        $response = new Response($json, 200);
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
     }
 }

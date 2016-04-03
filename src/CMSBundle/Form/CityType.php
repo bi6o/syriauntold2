@@ -35,6 +35,26 @@ class CityType extends AbstractType
                 'attr' => array(
                     'required' => false
                 )
+            ))
+            ->add('publisher')
+            ->add('translator')
+            ->add('supervisor')
+            ->add('specialThanks', 'textarea', array(
+                'attr' => array(
+                    'class' => 'tinymce',
+                    'data-theme' => 'advanced',
+                    'required' => false
+                )
+            ))
+            ->add('publisherAr')
+            ->add('translatorAr')
+            ->add('supervisorAr')
+            ->add('specialThanksAr', 'textarea', array(
+                'attr' => array(
+                    'class' => 'tinymce',
+                    'data-theme' => 'advanced',
+                    'required' => false
+                )
             ));
     }
     

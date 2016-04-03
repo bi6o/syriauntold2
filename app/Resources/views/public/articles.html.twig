@@ -3,105 +3,20 @@
         <h4>Related Article</h4>
     </div>
     <div class="col-md-11">
+        {% for article in articles %}
         <div class="col-md-2 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-11 col-xs-offset-1 div-article col-article-2  col-article-offset-2">
             <div class="article-img">
-                <img class="img-responsive" src="{{ asset('images/artilce-images/art-1.jpg') }}"/>
+                <img class="img-responsive" src="{{ asset('images/article/' ~ article.articleImage) }}"/>
             </div>
             <div class="article-desc">
-                <h4>article title</h4>
+                <h4>{{ article.articleTitle }}</h4>
 
-                <p> article text and cotent text and cotent text and cotent text and cotent text and cotent text and
-                    cotent text and cotent</p>
+                {{ article.articleDesc }}
             </div>
-            <a href="readmore">Read more</a>
-        </div>
-
-        <div class="col-md-2 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-11 col-xs-offset-1 div-article col-article-2  col-article-offset-2">
-            <div class="article-img">
-                <img class="img-responsive" src="{{ asset('images/artilce-images/art-1.jpg') }}"/>
-            </div>
-            <div class="article-desc">
-                <h4>article title</h4>
-
-                <p> article text and cotent text and cotent text and cotent text and cotent text and cotent text and
-                    cotent text and cotent</p>
-            </div>
-            <a href="readmore">Read more</a>
-        </div>
-
-        <div class="col-md-2 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-11 col-xs-offset-1 div-article col-article-2  col-article-offset-2">
-            <div class="article-img">
-                <img class="img-responsive" src="{{ asset('images/artilce-images/art-1.jpg') }}"/>
-            </div>
-            <div class="article-desc">
-                <h4>article title</h4>
-
-                <p> article text and cotent text and cotent text and cotent text and cotent text and cotent text and
-                    cotent text and cotent</p>
-            </div>
-            <a href="readmore">Read more</a>
-        </div>
-        <div class="col-md-2 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-11 col-xs-offset-1 div-article col-article-2  col-article-offset-2">
-            <div class="article-img">
-                <img class="img-responsive" src="{{ asset('images/artilce-images/art-1.jpg') }}"/>
-            </div>
-            <div class="article-desc">
-                <h4>article title</h4>
-
-                <p> article text and cotent text and cotent text and cotent text and cotent text and cotent text and
-                    cotent text and cotent</p>
-            </div>
-            <a href="readmore">Read more</a>
-        </div>
-        <div class="col-md-2 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-11 col-xs-offset-1 div-article col-article-2  col-article-offset-2">
-            <div class="article-img">
-                <img class="img-responsive" src="{{ asset('images/artilce-images/art-1.jpg') }}"/>
-            </div>
-            <div class="article-desc">
-                <h4>article title</h4>
-
-                <p> article text and cotent text and cotent text and cotent text and cotent text and cotent text and
-                    cotent text and cotent</p>
-            </div>
-            <a href="readmore">Read more</a>
-        </div>
-        <div class="col-md-2 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-11 col-xs-offset-1 div-article col-article-2  col-article-offset-2">
-            <div class="article-img">
-                <img class="img-responsive" src="{{ asset('images/artilce-images/art-1.jpg') }}"/>
-            </div>
-            <div class="article-desc">
-                <h4>article title</h4>
-
-                <p> article text and cotent text and cotent text and cotent text and cotent text and cotent text and
-                    cotent text and cotent</p>
-            </div>
-            <a href="readmore">Read more</a>
-        </div>
-        <div class="col-md-2 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-11 col-xs-offset-1 div-article col-article-2  col-article-offset-2">
-            <div class="article-img">
-                <img class="img-responsive" src="{{ asset('images/artilce-images/art-1.jpg') }}"/>
-            </div>
-            <div class="article-desc">
-                <h4>article title</h4>
-
-                <p> article text and cotent text and cotent text and cotent text and cotent text and cotent text and
-                    cotent text and cotent</p>
-            </div>
-            <a href="readmore">Read more</a>
-        </div>
-        <div class="col-md-2 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-11 col-xs-offset-1 div-article col-article-2  col-article-offset-2">
-            <div class="article-img">
-                <img class="img-responsive" src="{{ asset('images/artilce-images/art-1.jpg') }}"/>
-            </div>
-            <div class="article-desc">
-                <h4>article title</h4>
-
-                <p> article text and cotent text and cotent text and cotent text and cotent text and cotent text and
-                    cotent text and cotent</p>
-            </div>
-            <a href="readmore">Read more</a>
+            <a href="{{ article.articleLink }}">Read more</a>
         </div>
     </div>
+    {% endfor %}
 
 
 </div>

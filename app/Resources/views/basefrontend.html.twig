@@ -1,13 +1,13 @@
 {% include 'public/header.html.twig' %}
 {% block body %}
-    <div id="ajax"></div>{% endblock %}
+
+{% endblock %}
 {% include 'public/footer.html.twig' %}
 <script>
     function cityChosen(cityId) {
         $.post('{{path('homepage_city_ajax')}}',
                 {id: cityId},
                 function (data) {
-                    alert(data);
                     $("#ajax").html(data);
                 }, "json");
     }
@@ -19,4 +19,19 @@
             );
         });
     });
+</script>
+<script>
+
+    $.ajax({
+                url: Routing.generate('ajax'),
+                type: "POST",
+                data:"JSONFile=" + json,
+            })
+            .done(function(data){
+                template = response;
+                $('#ajax').html(data); //Change the html of the div with the id = "your_div"
+            })
+            .fail(function(jqXHR, textStatus, errorThrown){
+                alert('Error : ' + errorThrown);
+            });
 </script>

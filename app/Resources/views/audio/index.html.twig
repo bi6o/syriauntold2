@@ -6,7 +6,6 @@
     <table>
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Audiolink</th>
                 <th>Cityid</th>
                 <th>Actions</th>
@@ -15,19 +14,9 @@
         <tbody>
         {% for audio in audios %}
             <tr>
-                <td><a href="{{ path('admin_audio_show', { 'id': audio.id }) }}">{{ audio.id }}</a></td>
-                <td>{{ audio.audioLink }}</td>
+                <td class="col-md-2">{{ audio.audioLink|raw }}</td>
                 <td>{{ audio.cityId }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('admin_audio_show', { 'id': audio.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('admin_audio_edit', { 'id': audio.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
+                <td><a href="{{ path('admin_audio_edit', { 'id': audio.id }) }}">edit</a></td>
             </tr>
         {% endfor %}
         </tbody>

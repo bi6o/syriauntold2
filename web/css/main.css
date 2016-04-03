@@ -1,0 +1,193 @@
+body
+{
+    margin:0 auto;
+}
+td , th , td * , th *
+{
+    width: 30%;
+    text-align: center;
+}
+table
+{
+    font-size:18px;
+    line-height: 2.2em;
+    width:88%
+}
+table td , table th
+{
+    border:1px double #550000  ;
+}
+input[type=submit] {
+    margin-bottom: 10px;
+}
+.red
+{
+    color:darkred;
+}
+ul
+{
+    padding-left: 0px;
+}
+ul li
+{
+    font-size: 18px;
+    list-style-type: none;
+}
+ul li a
+{
+    color:darkred;
+}
+.nav>li>a:hover, .nav>li>a:focus
+{
+    background-color: rgb(229, 230, 252);
+}
+.header
+{
+    background-color: #1B5264;
+    height: 100px;
+}
+.body-block-container
+{
+    margin-top:40px;
+}
+.admin-welcome
+{
+    color:#000;
+}
+.footer
+{
+    background-color: #1B5264;
+    height: 40px;
+    border-bottom-left-radius :10px;
+    border-bottom-right-radius: 10px;
+}
+.copyrights
+{
+    color:#000;
+    padding-top: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.admin-name
+{
+    color:darkred;
+}
+.admin-name-container
+{
+    margin-top: 35px;
+    font-size: 1.7em;
+}
+label , #username , #password
+{
+    font-size: 1.1em;
+}
+.cpanel-slogan
+{
+    top:10px;
+    color:#fff;
+}
+.cpanel-logo
+{
+    margin-top: 20px;
+}
+.body-container
+{
+    background-color: #E9EBFF;
+    min-height:90vh;
+}
+.nav li
+{
+    font-size: 22px;
+    line-height: 3em;
+    border-bottom: 1px solid #000;
+}
+.nav li a , td a
+{
+    color:darkred;
+}
+.nav li a:link , td a:link
+{
+    color:darkred;
+}
+.nav li a:active , td a:active
+{
+    color:#0d3349;
+}
+.nav li a:visited , td a:visited
+{
+    color:darkred;
+}
+
+.nav li a:hover , td a:hover
+{
+    color:red;
+}
+.tabs {
+    width:100%;
+    display:inline-block;
+}
+
+/*----- Tab Links -----*/
+/* Clearfix */
+.tab-links:after {
+    display:block;
+    clear:both;
+    content:'';
+}
+
+.tab-links li {
+    margin:0px 5px;
+    float:left;
+    list-style:none;
+}
+
+.tab-links a {
+    padding:9px 15px;
+    display:inline-block;
+    border-radius:3px 3px 0px 0px;
+    background:#DFE3F2;
+    font-size:16px;
+    font-weight:600;
+    color:darkred;
+    transition:all linear 0.15s;
+}
+
+.tab-links a:hover {
+    background:#a7cce5;
+    text-decoration:none;
+}
+
+li.active a, li.active a:hover {
+    background:#fff;
+    color:#4c4c4c;
+}
+
+/*----- Content of Tabs -----*/
+.tab-content {
+    padding:15px;
+    border-radius:3px;
+    box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
+    background:#fff;
+}
+
+.tab {
+    display:none;
+}
+
+.tab.active {
+    display:block;
+}
+
+@media screen and (max-width: 720px) {
+    .admin-name-container {
+        font-size: 1.3em;
+    }
+    .cpanel-logo-container
+    {
+        top: 18px;
+    }
+    .nav li
+    {
+        font-size: 1em;
+    }
+}

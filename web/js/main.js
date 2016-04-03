@@ -27,8 +27,6 @@ $("#fancy-box").fancybox({
     }
   });
 
-// boostrap tooltip initilize  
-  $('[data-toggle="tooltip"]').tooltip()
   
 //On click active class
 var rwlButton = $('div.rwl-buttons > a');
@@ -46,22 +44,22 @@ var rwlButton = $('div.rwl-buttons > a');
 //onClick scroll to 
 
   $('#read').click(function(){
-      $('htm,body').stop().animate({
-          scrollTop: $('#row-read').offset().top,        
+      $('html ,body').stop().animate({
+          scrollTop: $('#row-read').offset().top
         },1000
       );
   });
 
   $('#watch').click(function(){
-      $('htm,body').stop().animate({
-          scrollTop: $('#row-watch').offset().top,        
+      $('html ,body').stop().animate({
+          scrollTop: $('#row-watch').offset().top
         },1000
       );
   });
 
   $('#listen').click(function(){
-      $('htm,body').stop().animate({
-          scrollTop: $('#row-listen').offset().top,        
+      $('html ,body').stop().animate({
+          scrollTop: $('#row-listen').offset().top
         },1000
       );
   });
@@ -72,8 +70,6 @@ var rwlButton = $('div.rwl-buttons > a');
 
 var docVar = $(document);
 var windowVar = $(window);
-var fadeVar = $('.fade-out');
-var infoRow = $('row-infographic');
 docVar.ready( function() {
   windowVar.scroll(function() {
         $('.fade-out').each(function(i) {

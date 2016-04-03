@@ -47,7 +47,7 @@ homepage:
     defaults: { _controller: CMSBundle:Frontend:index }
 
 homepage_city_ajax:
-  pattern:  /home
+  pattern:  /home/ajax
   defaults: { _controller: CMSBundle:Frontend:ajax }
 
 login:
