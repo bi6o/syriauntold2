@@ -15,8 +15,7 @@
     <div class="photo-primary col-md-7 col-md-offset-1 col-sm-7 col-sm-offset-1 col-xs-7 col-xs-offset-1" id="photo">
         {% for infographic in infographics %}
             <div class="photo main-infographic-viewer-div">
-                <img class="col-md-12 col-sm-12 col-xs-12"
-                     src="{{ asset('images/infographic/'~ infographic.infoImage) }}">
+                <img class="col-md-12 col-sm-12 col-xs-12" src="{{ asset('images/infographic/'~ infographic.infoImage) }}">
             </div>
         {% endfor %}
 

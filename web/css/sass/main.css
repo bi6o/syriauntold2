@@ -31,27 +31,25 @@ body {
 
 /* line 34, ../../sass/pages/homepage.scss */
 .yellow-subject {
-  /*   height: 50px;
-    padding-top: 10px; */
   border-radius: 5px;
   background-color: #f7ff05;
 }
-/* line 39, ../../sass/pages/homepage.scss */
+/* line 37, ../../sass/pages/homepage.scss */
 .yellow-subject h4 {
   padding-top: 22px;
   font-weight: bold;
 }
-/* line 43, ../../sass/pages/homepage.scss */
+/* line 41, ../../sass/pages/homepage.scss */
 .yellow-subject img {
   height: 75px;
   width: auto;
 }
 
-/* line 50, ../../sass/pages/homepage.scss */
+/* line 48, ../../sass/pages/homepage.scss */
 .row-centered {
   text-align: center;
 }
-/* line 53, ../../sass/pages/homepage.scss */
+/* line 51, ../../sass/pages/homepage.scss */
 .row-centered .col-centered {
   display: inline-block;
   float: none;
@@ -61,7 +59,7 @@ body {
   margin-right: -4px;
 }
 
-/* line 64, ../../sass/pages/homepage.scss */
+/* line 62, ../../sass/pages/homepage.scss */
 .center-div-elements {
   display: flex;
   align-items: center;
@@ -73,72 +71,72 @@ body {
   flex-direction: column;
 }
 
-/* line 75, ../../sass/pages/homepage.scss */
+/* line 73, ../../sass/pages/homepage.scss */
 .center-div-elements-vertically {
   display: flex;
   justify-content: center;
 }
 
-/* line 81, ../../sass/pages/homepage.scss */
+/* line 79, ../../sass/pages/homepage.scss */
 .paragraph-text {
   padding-top: 25px;
   padding-bottom: 25px;
 }
 
-/* line 89, ../../sass/pages/homepage.scss */
+/* line 87, ../../sass/pages/homepage.scss */
 .alert-subject {
   /*     display: inline-block;
    */
   /*   padding-bottom: 15px; */
 }
-/* line 92, ../../sass/pages/homepage.scss */
+/* line 90, ../../sass/pages/homepage.scss */
 .alert-subject .col-md-4, .alert-subject .col-sm-4, .alert-subject .col-xs-4 {
   padding-left: 0px;
 }
 
-/* line 96, ../../sass/pages/homepage.scss */
+/* line 94, ../../sass/pages/homepage.scss */
 .alert-subject h1, .alert-subject h2, .alert-subject h3, .alert-subject h4, .alert-subject h5, .alert-subject h6, .alert-subject p {
   color: white;
   font-weight: bold;
   padding-left: 90px;
 }
 
-/* line 103, ../../sass/pages/homepage.scss */
+/* line 101, ../../sass/pages/homepage.scss */
 .alert-subject > :first-child {
   padding: 15px 15px 7px 15px;
   background-color: #ff0d05;
 }
 
-/* line 108, ../../sass/pages/homepage.scss */
+/* line 106, ../../sass/pages/homepage.scss */
 .alert-subject :nth-child(2) {
   padding: 3px 6px 1px 15px;
   height: 40px;
   background-color: #850804;
 }
 
-/* line 117, ../../sass/pages/homepage.scss */
+/* line 115, ../../sass/pages/homepage.scss */
 .primary-subject .col-md-4, .primary-subject .col-sm-4, .primary-subject .col-xs-4 {
   padding-right: 0px;
 }
 
-/* line 123, ../../sass/pages/homepage.scss */
+/* line 118, ../../sass/pages/homepage.scss */
 .primary-subject {
   direction: rtl;
 }
-/* line 125, ../../sass/pages/homepage.scss */
+/* line 120, ../../sass/pages/homepage.scss */
 .primary-subject h1, .primary-subject h2, .primary-subject h3, .primary-subject h4, .primary-subject h5, .primary-subject h6, .primary-subject p {
   color: #000;
   font-weight: bold;
   padding-right: 90px;
 }
 
-/* line 132, ../../sass/pages/homepage.scss */
+/* line 127, ../../sass/pages/homepage.scss */
 .primary-subject > :first-child {
   padding: 15px 15px 7px 15px;
   background-color: #f7ff05;
 }
 
-/* line 137, ../../sass/pages/homepage.scss */
+/* line 132, ../../sass/pages/homepage.scss */
 .primary-subject :nth-child(2) {
   padding: 3px 6px 1px 15px;
   height: 40px;
@@ -670,6 +668,7 @@ div.map-div img {
   overflow-x: hidden;
   height: 527px;
   direction: rtl;
+  margin-bottom: 15px;
 }
 /* line 13, ../../sass/layout/_infographic-viewer.scss */
 .row-infographic .main-infographic-viewer-div img {
@@ -807,16 +806,14 @@ div.map-div img {
 
 /* line 1, ../../sass/layout/_gallery.scss */
 .row-gallery {
-  overflow: hidden;
-  margin: 0 auto;
-  background-color: rgba(7, 7, 7, 0.94);
-}
-/* line 5, ../../sass/layout/_gallery.scss */
-.row-gallery .col-md-4, .row-gallery .col-md-6, .row-gallery .col-sm-6, .row-gallery .col-md-2, .row-gallery .col-md-3 {
-  padding: 0px;
+  background-color: #DEDEDE;
 }
 
-/* line 11, ../../sass/layout/_gallery.scss */
+/* line 5, ../../sass/layout/_gallery.scss */
+.gallery-container {
+  overflow-y: auto;
+}
+/* line 7, ../../sass/layout/_gallery.scss */
 .gallery-container .shadow {
   width: 100%;
   height: auto;
@@ -825,8 +822,12 @@ div.map-div img {
   transition: filter 0.3s, box-shadow 0.3s;
   -webkit-transition: filter 0.3s, -webkit-filter 0.3s, box-shadow 0.3s;
 }
+/* line 15, ../../sass/layout/_gallery.scss */
+.gallery-container a, .gallery-container img {
+  display: inline-block;
+}
 
-/* line 22, ../../sass/layout/_gallery.scss */
+/* line 21, ../../sass/layout/_gallery.scss */
 .shadows-link:hover img,
 .shadows-link:focus img {
   -webkit-filter: none;
@@ -834,6 +835,55 @@ div.map-div img {
   box-shadow: #224 0.2em 0.2em 0.6em 0.1em;
 }
 
+/* line 28, ../../sass/layout/_gallery.scss */
+#photos {
+  -webkit-column-count: 5;
+  -webkit-column-gap: 0px;
+  -moz-column-count: 5;
+  -moz-column-gap: 0px;
+  column-count: 5;
+  column-gap: 0px;
+}
+
+/* line 37, ../../sass/layout/_gallery.scss */
+#photos img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+}
+
+@media (max-width: 1200px) {
+  /* line 43, ../../sass/layout/_gallery.scss */
+  #photos {
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
+    column-count: 4;
+  }
+}
+@media (max-width: 1000px) {
+  /* line 50, ../../sass/layout/_gallery.scss */
+  #photos {
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+  }
+}
+@media (max-width: 800px) {
+  /* line 57, ../../sass/layout/_gallery.scss */
+  #photos {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
+}
+@media (max-width: 400px) {
+  /* line 64, ../../sass/layout/_gallery.scss */
+  #photos {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
+  }
+}
 /* line 1, ../../sass/layout/_articles.scss */
 .row-articles {
   padding-top: 25px;
@@ -1065,4 +1115,14 @@ div.footer-social-tab {
 /* line 79, ../../sass/layout/_footer.scss */
 .col-social {
   width: 55%;
+}
+
+/* line 83, ../../sass/layout/_footer.scss */
+.footer-copy-write {
+  font-weight: bold;
+  padding-top: 130px;
+}
+/* line 86, ../../sass/layout/_footer.scss */
+.footer-copy-write p {
+  margin-bottom: 0px;
 }

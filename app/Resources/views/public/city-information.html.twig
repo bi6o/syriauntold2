@@ -3,7 +3,7 @@
       <div class="city-subject-left left">
           <h3>{{ city.name }}</h3>
           
-          <p class="city-pdf"><a  href="">Download Pdf</a></p>
+          <p class="city-pdf"><a  href="{{ asset('citypdf/')~city.pdfUrl }}">Download Pdf</a></p>
           <p>Last Update:<span class="font-light">{{ city.updatedAt|date }}</span></p>
           <p>Publisher:  <span class="font-light">{{ city.publisher }}</span></p>
           <p>Translator: <span class="font-light">{{ city.translator }}</span></p>

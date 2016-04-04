@@ -20,8 +20,10 @@ class FrontendController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $sitedesc = $em->getRepository('CMSBundle:SiteDesc')->findAll();
+        $sitemeta = $em->getRepository('CMSBundle:SiteMeta')->findAll();
         return $this->render('frontend/index.html.twig', array(
             'sitedesc' => $sitedesc,
+            'sitemeta' => $sitemeta,
 
         ));
     }
